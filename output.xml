@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.7 on win32)" generated="20220513 21:51:07.804" rpa="false" schemaversion="3">
+<suite id="s1" name="TC1" source="C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\TC1.robot">
+<test id="s1-t1" name="PrintingLinksTest" line="13">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220513 21:51:07.972" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20220513 21:51:07.972" endtime="20220513 21:51:11.378"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220513 21:51:11.378" endtime="20220513 21:51:11.527"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://input[@class='gLFyf gsfi']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:11.527" level="INFO">Clicking element 'xpath://input[@class='gLFyf gsfi']'.</msg>
+<status status="PASS" starttime="20220513 21:51:11.527" endtime="20220513 21:51:11.598"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@class='gLFyf gsfi']</arg>
+<arg>robotframework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:11.598" level="INFO">Typing text 'robotframework' into text field '//input[@class='gLFyf gsfi']'.</msg>
+<status status="PASS" starttime="20220513 21:51:11.598" endtime="20220513 21:51:11.679"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//input[@value='Google Search'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:11.679" level="INFO">Clicking element '(//input[@value='Google Search'])[1]'.</msg>
+<status status="PASS" starttime="20220513 21:51:11.679" endtime="20220513 21:51:13.271"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${AllLinksCount}</var>
+<arg>xpath://div[@class='jtfYYd']//div[@class='yuRUbf']/a</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220513 21:51:13.288" level="INFO">${AllLinksCount} = 6</msg>
+<status status="PASS" starttime="20220513 21:51:13.271" endtime="20220513 21:51:13.288"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${AllLinksCount}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220513 21:51:13.288" endtime="20220513 21:51:13.288"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{AllLinks}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220513 21:51:13.288" level="INFO">@{AllLinks} = [ ]</msg>
+<status status="PASS" starttime="20220513 21:51:13.288" endtime="20220513 21:51:13.288"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${AllLinksCount}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkText}</var>
+<arg>xpath:(//div[@class='jtfYYd']//div[@class='yuRUbf']/a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:13.328" level="INFO">${linkText} = Robot Framework - GitHub
+https://github.com › robotframework › robotframework</msg>
+<status status="PASS" starttime="20220513 21:51:13.297" endtime="20220513 21:51:13.328"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220513 21:51:13.328" endtime="20220513 21:51:13.328"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${AllLinks}</arg>
+<arg>${linkText}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220513 21:51:13.328" endtime="20220513 21:51:13.328"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.297" endtime="20220513 21:51:13.328"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkText}</var>
+<arg>xpath:(//div[@class='jtfYYd']//div[@class='yuRUbf']/a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:13.362" level="INFO">${linkText} = Robot Framework Tutorial - Tutorialspoint
+https://www.tutorialspoint.com › robot_framework</msg>
+<status status="PASS" starttime="20220513 21:51:13.328" endtime="20220513 21:51:13.362"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220513 21:51:13.362" endtime="20220513 21:51:13.362"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${AllLinks}</arg>
+<arg>${linkText}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220513 21:51:13.362" endtime="20220513 21:51:13.362"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.328" endtime="20220513 21:51:13.362"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkText}</var>
+<arg>xpath:(//div[@class='jtfYYd']//div[@class='yuRUbf']/a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:13.388" level="INFO">${linkText} = Basic concepts of Robot Framework - Robocorp
+https://robocorp.com › docs › robot-framework › basics</msg>
+<status status="PASS" starttime="20220513 21:51:13.362" endtime="20220513 21:51:13.388"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220513 21:51:13.388" endtime="20220513 21:51:13.388"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${AllLinks}</arg>
+<arg>${linkText}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220513 21:51:13.388" endtime="20220513 21:51:13.388"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.362" endtime="20220513 21:51:13.388"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkText}</var>
+<arg>xpath:(//div[@class='jtfYYd']//div[@class='yuRUbf']/a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:13.417" level="INFO">${linkText} = Robot Framework - Wikipedia
+https://en.wikipedia.org › wiki › Robot_Framework</msg>
+<status status="PASS" starttime="20220513 21:51:13.388" endtime="20220513 21:51:13.417"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220513 21:51:13.417" endtime="20220513 21:51:13.417"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${AllLinks}</arg>
+<arg>${linkText}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220513 21:51:13.417" endtime="20220513 21:51:13.417"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.388" endtime="20220513 21:51:13.417"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkText}</var>
+<arg>xpath:(//div[@class='jtfYYd']//div[@class='yuRUbf']/a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:13.442" level="INFO">${linkText} = Robot Framework in Python - GeeksforGeeks
+https://www.geeksforgeeks.org › robot-framework-in-p...</msg>
+<status status="PASS" starttime="20220513 21:51:13.417" endtime="20220513 21:51:13.442"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220513 21:51:13.442" endtime="20220513 21:51:13.442"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${AllLinks}</arg>
+<arg>${linkText}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220513 21:51:13.442" endtime="20220513 21:51:13.442"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.417" endtime="20220513 21:51:13.442"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${linkText}</var>
+<arg>xpath:(//div[@class='jtfYYd']//div[@class='yuRUbf']/a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220513 21:51:13.461" level="INFO">${linkText} = Robot Framework - Google Code
+https://code.google.com › archive › robotframework</msg>
+<status status="PASS" starttime="20220513 21:51:13.442" endtime="20220513 21:51:13.461"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${linkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220513 21:51:13.461" endtime="20220513 21:51:13.461"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${AllLinks}</arg>
+<arg>${linkText}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220513 21:51:13.467" endtime="20220513 21:51:13.468"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.442" endtime="20220513 21:51:13.468"/>
+</iter>
+<status status="PASS" starttime="20220513 21:51:13.297" endtime="20220513 21:51:13.468"/>
+</for>
+<kw name="Create File" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220513 21:51:13.468" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt"&gt;C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</kw>
+<for flavor="IN">
+<var>${i}</var>
+<value>@{AllLinks}</value>
+<iter>
+<var name="${i}">Robot Framework - GitHub
+https://github.com › robotframework › robotframework</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>${i}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220513 21:51:13.468" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt"&gt;C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</iter>
+<iter>
+<var name="${i}">Robot Framework Tutorial - Tutorialspoint
+https://www.tutorialspoint.com › robot_framework</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>${i}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220513 21:51:13.468" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt"&gt;C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</iter>
+<iter>
+<var name="${i}">Basic concepts of Robot Framework - Robocorp
+https://robocorp.com › docs › robot-framework › basics</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>${i}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220513 21:51:13.468" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt"&gt;C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</iter>
+<iter>
+<var name="${i}">Robot Framework - Wikipedia
+https://en.wikipedia.org › wiki › Robot_Framework</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>${i}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220513 21:51:13.468" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt"&gt;C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</iter>
+<iter>
+<var name="${i}">Robot Framework in Python - GeeksforGeeks
+https://www.geeksforgeeks.org › robot-framework-in-p...</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>${i}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220513 21:51:13.468" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt"&gt;C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</iter>
+<iter>
+<var name="${i}">Robot Framework - Google Code
+https://code.google.com › archive › robotframework</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>${i}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220513 21:51:13.468" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt"&gt;C:\Users\prisaxen4\PycharmProjects\AutomationNew\TestCases\link2.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</iter>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:13.468"/>
+</for>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220513 21:51:13.468" endtime="20220513 21:51:15.650"/>
+</kw>
+<status status="PASS" starttime="20220513 21:51:07.972" endtime="20220513 21:51:15.650"/>
+</test>
+<status status="PASS" starttime="20220513 21:51:07.811" endtime="20220513 21:51:15.650"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
